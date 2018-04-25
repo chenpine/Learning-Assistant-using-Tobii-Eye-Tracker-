@@ -1,0 +1,261 @@
+.svg-container{
+	display: inline-block;
+	position: relative;
+	width: 100%;
+	height: 100%;
+	padding-bottom: 55%;
+  /*line-height: 1.6;*/
+}
+.svg-content{
+	display: block;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-attachment: fixed;
+	background-size: cover;
+	background-repeat:no-repeat;
+	overflow: hidden;
+}
+.text{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:18px;
+	font-weight:bold;
+	fill:#101010;
+
+	}
+	.text_box{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:15px;
+	font-weight:normal;
+	fill:#101010;
+
+	}
+	.text_sign{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:30px;
+	font-weight:bold;
+	fill:#101010;
+	}
+
+	.text_no{
+		font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	fill:#C3B012;
+	}
+	.text_button{
+		font-family:Arial, Helvetica, sans-serif;
+ 	font-size:18px;
+ 	fill:#ffffff;
+	}
+	.text_a{
+		font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+		font-size: 18px;
+		font-weight: bold;
+		font-style: italic;
+		fill:#101010;
+	}
+	.tag{
+		fill:white;
+		stroke:rgb(200,200,200);
+		stroke-width:1px;
+	}
+	.draggable{
+		cursor: move;
+	}
+	.button{
+		cursor: pointer;
+	}
+	input{
+
+	}
+	input[type="text"] {
+	  width: 30px;
+ 	  height: 25px;
+	  font-family: sans-serif;
+	  font-size: 15px;
+
+	  appearance: none;
+	  box-shadow: none;
+	  border-radius: none;
+	  padding: 6px 5px;
+	  border: solid 2px #dcdcdc;
+	  text-align: center;
+	}
+	input[type="text"]:focus {
+	  outline: none;
+	}
+
+	.equation_frame{
+		stroke: #9CBA5F;
+		stroke-width:3px;
+	}
+	.equation_frame_thin{
+		stroke: #9CBA5F;
+		stroke-width:1.5px;
+	}
+
+        .svg-container{
+            display: inline-block;
+            position: relative;
+            width: 100%;
+            padding-bottom: 55%;
+        }
+        .svg-content{
+            display: block;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height:100%;
+            /*background-image: url("img/background.jpg");*/
+            background-attachment: fixed;
+            background-size: cover;
+            background-repeat:no-repeat;
+            overflow: hidden;
+        }
+
+  g.button:hover{
+    opacity: 0.75;
+  }
+ .Qfont{
+   font-family:Arial, Helvetica, sans-serif;
+   font-size:2px;
+   font-weight:bold;
+   color:#000;
+   -webkit-touch-callout: none;
+   -webkit-user-select:none;
+   -khtml-user-select:none;
+   -moz-user-select:none;
+   -ms-user-select:none;
+   -o-user-select:none;
+   user-select:none;
+ }
+
+  .Cfont{
+   font-family:Arial, Helvetica, sans-serif;
+   font-size:3px;
+   font-weight:bold;
+   color:#000;
+   -webkit-touch-callout: none;
+   -webkit-user-select:none;
+   -khtml-user-select:none;
+   -moz-user-select:none;
+   -ms-user-select:none;
+   -o-user-select:none;
+   user-select:none;
+ }
+  .Bfont{
+   font-family:Arial, Helvetica, sans-serif;
+   font-size:2px;
+   -webkit-touch-callout: none;
+   -webkit-user-select:none;
+   -khtml-user-select:none;
+   -moz-user-select:none;
+   -ms-user-select:none;
+   -o-user-select:none;
+   user-select:none;
+
+ }
+ /*legand font style*/
+ .Lfont{
+   font-family:Arial, Helvetica, sans-serif;
+   font-size:1.5px;
+   font-weight:bold;
+   -webkit-touch-callout: none;
+   -webkit-user-select:none;
+   -khtml-user-select:none;
+   -moz-user-select:none;
+   -ms-user-select:none;
+   -o-user-select:none;
+   user-select:none;
+ }
+  .Lfont1{
+   font-family:Arial, Helvetica, sans-serif;
+   font-size:1.5px;
+   -webkit-touch-callout: none;
+   -webkit-user-select:none;
+   -khtml-user-select:none;
+   -moz-user-select:none;
+   -ms-user-select:none;
+   -o-user-select:none;
+   user-select:none;
+ }
+  .Lfont2{
+   font-family:Arial, Helvetica, sans-serif;
+   font-size:4px;
+   font-weight:bold;
+   -webkit-touch-callout: none;
+   -webkit-user-select:none;
+   -khtml-user-select:none;
+   -moz-user-select:none;
+   -ms-user-select:none;
+   -o-user-select:none;
+   user-select:none;
+ }
+.QQfont{
+   font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+   font-size:2px;
+   font-weight:bold;
+   color:#000;
+   -webkit-touch-callout: none;
+   -webkit-user-select:none;
+   -khtml-user-select:none;
+   -moz-user-select:none;
+   -ms-user-select:none;
+   -o-user-select:none;
+   user-select:none;
+ }
+.noneSelect{
+    -webkit-touch-callout: none;
+    -webkit-user-select:none;
+    -khtml-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    -o-user-select:none;
+    user-select:none;
+  }
+
+
+.dot {
+    height: 100px;
+    width: 100px;
+    background-color: black;
+    opacity: 0.5;
+    border-radius: 50%;
+    display: inline-block;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 100%;
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+    -webkit-filter: blur(0.5px);
+    filter: blur(0.5px);
+}
+
+.small_dot {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: crimson;
+      border-radius: 50%;
+  }
+
+#gaze {
+  transition: all 1s ease-in-out;
+  -webkit-transition: all 1s ease-in-out;
+  display: none;
+}
+
+#test_rectangle {
+  border-width: 8px;
+  border-color: black;
+  width: 100px;
+  height: 50px;
+  z-index: 10;
+  position: absolute;
+  left: 0;
+  top: 0;
+}

@@ -1,0 +1,374 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Eyetracker Project</title>
+<script src="js/jquery-1.12.0.min.js"></script>
+<script src="js/velocity.min.js"></script>
+<script src="js/ion.sound.min.js"></script>
+<script src="js/databasefunctions.js"></script>
+<script src="js/functions.js"></script>
+
+<script src="js/dot_gaze.js"></script>
+
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+
+
+
+<audio id="1" onloadeddata="var audioPlayer = this; ">
+<source src="audio/B2T4 L1.mp3" type="audio/mp3" />
+</audio>
+<audio id="click">
+<source src="audio/click.mp3" type="audio/mp3">
+</audio>
+<audio id="2">
+<source src="audio/B2T4 L2.mp3" type="audio/mp3">
+</audio>
+<audio id="3">
+<source src="audio/B2T4 L3.mp3" type="audio/mp3">
+</audio>
+<audio id="4" >
+<source src="audio/B2T4 L4.mp3" type="audio/mp3">
+</audio>
+<audio id="5">
+<source src="audio/B2T4 L5.mp3" type="audio/mp3">
+</audio>
+<audio id="6">
+<source src="audio/B2T4 L6.mp3" type="audio/mp3">
+</audio>
+<audio id="7">
+<source src="audio/B2T4 L7.mp3" type="audio/mp3">
+</audio>
+<audio id="8">
+<source src="audio/B2T4 L8.mp3" type="audio/mp3">
+</audio>
+<audio id="9">
+<source src="audio/T6L9.MP3" type="audio/mp3">
+</audio>
+<audio id="10">
+<source src="audio/T6L10.MP3" type="audio/mp3">
+</audio>
+<audio id="11">
+<source src="audio/T6L11.MP3" type="audio/mp3">
+</audio>
+<audio id="12">
+<source src="audio/B2T4 L8.mp3" type="audio/mp3">
+</audio>
+<audio id="17">
+<source src="audio/B2T4 L17.mp3" type="audio/mp3">
+</audio>
+<audio id="23">
+<source src="audio/B2T1 L11.mp3" type="audio/mp3">
+</audio>
+<audio id="24">
+<source src="audio/B2T4 L24.mp3" type="audio/mp3">
+</audio>
+<audio id="25">
+<source src="audio/B2T4 L25.mp3" type="audio/mp3">
+</audio>
+<audio id="29">
+<source src="audio/B2T4 L29.mp3" type="audio/mp3">
+</audio>
+<audio id="31">
+<source src="audio/B2T4 L31.mp3" type="audio/mp3">
+</audio>
+<audio id="33">
+<source src="audio/B2T4 L33.mp3" type="audio/mp3">
+</audio>
+<audio id="Next" >
+<source src="audio/B2D33.mp3" type="audio/mp3" />
+</audio>
+
+<div class="svg-container">
+
+
+<svg id="svg1" version="1.1" xmlns="http://www.w3.org/2000/svg"  class="svg-content" preserveAspectRatio="xMidYMid meet" viewBox="0 0 100 60" onmousemove='moveElement(evt)' onmouseup='deselectElement(evt)'>
+
+<g id="question">
+  <!-- Question Box-->
+<rect x="2" y="0" width="95" height="11.5" fill="#f9f8ea" stroke-width="0.2" stroke="rgb(0,0,0)"> </rect>
+
+<rect id = "Q1" x="6" y="1" width="37" height="1.5" fill="#f9f8ea" > </rect>
+<text id="q1" x="6" y="2.5"  class="Qfont"  fill="black">David delivers pizzas in his spare time.</text> <!-- T4L1-->
+
+<rect id = "Q2" x="43.6" y="1" width="42" height="1.5" fill="#f9f8ea" > </rect>
+<text id="q2" x="43.6" y="2.5"  class="Qfont"  fill="black">Today, he delivers 21 pizzas in the morning. </text> <!-- T4L2-->
+
+<rect id = "Q3" x="6" y="5" width="45" height="1.5" fill="#f9f8ea" > </rect>
+<text id="q3" x="6" y="6.5" class="Qfont"  fill="black">Then, he delivers some pizzas in the afternoon.  </text> <!-- T4L3-->
+
+<rect id = "Q4" x="51.8" y="5" width="26" height="1.5" fill="#f9f8ea" > </rect>
+<text id="q4" x="51.8" y="6.5" class="Qfont"  fill="black">In all, he delivers 37 pizzas. </text> <!-- T4L4-->
+
+<rect id = "Q5" x="6" y="9" width="53" height="1.5" fill="#f9f8ea" > </rect>
+<text id="q5" x="6" y="10.5" class="Qfont" > How many pizzas does David deliver in the afternoon?</text> <!-- T4L5-->
+
+<!-- Arrow image-->
+<image id = "arrow" xlink:href="img/arrow.png" x= "97" y="0.7" width = "5" height = "2.5" display = none></image>
+<image id = "arrow_2" xlink:href="img/arrow_2.png" x= "-5" y="0.7" width = "5" height = "2.5" display =none></image>
+</g>
+
+
+<g id="instruction">
+  <!-- Instruction Box-->
+<rect x="2" y="16" width="95" height="29" fill="#e5e5de" stroke-width="0.2" stroke="rgb(0,0,0)"> </rect>
+<!-- T4L6, T4L7, T4L24, T4L25, T4L8-->
+
+<rect id = "I1" x="6" y="18" width="88" height="1.5" fill="#e5e5de" > </rect>
+<text id="q4" x="6" y="19.5" class="Qfont">Now, drag each of the numbers from the task into the correct box in the diagram equation.</text>
+<rect id = "I2" x="6" y="22" width="46" height="1.5" fill="#e5e5de" > </rect>
+<rect id = "I3" x="53" y="22" width="43" height="1.5" fill="#e5e5de" > </rect>
+<text id="q4" x="6" y="23.5" class="Qfont">Please click on a, when the quantity is unknown. When done, please click "Check my Answer".</text>
+
+</g>
+
+
+
+<g id="PPW">
+  <!-- Answer Box-->
+<text id="parttext1" x="26" y="34" class="Qfont"> Morning</text>
+<rect id="partrect1" x="26" y="35" rx="0" ry="0" width="8" height="8"
+          style="fill:#eaf9f9;stroke:black;stroke-width:0.1;fill-opacity:1;
+          stroke-opacity:1"/>
+<text id="parttext2" x="43" y="34" class="Qfont"> Afternoon</text>
+<rect id="partrect2" x="43" y="35" rx="0" ry="0" width="8" height="8"
+          style="fill:#eaf9f9;stroke:black;stroke-width:0.1;fill-opacity:1;
+          stroke-opacity:1"/>
+<text id="wholetext" x="62.5" y="34" class="Qfont"> All</text>
+<rect id="wholerect" x="60" y="35" rx="0" ry="0" width="8" height="8"
+          style="fill:#eaf9f9;stroke:black;stroke-width:0.1;fill-opacity:1;
+          stroke-opacity:1"/>
+<text x="53" y="40" class="Lfont2"> =</text>
+<text x="37" y="40" class="Lfont2"> +</text>
+</g>
+
+<g id="numTags">
+<image id="num_part_1" xlink:href="img/21.png" class="draggable" x="60" y="0.5" width="5" height="3"   transform="matrix(1 0 0 1 0 0)" onmousedown="selectElement(evt)" />
+<image id="num_whole" xlink:href="img/37.png" class="draggable" x="67" y="4.5" width="5" height="3"   transform="matrix(1 0 0 1 0 0)" onmousedown="selectElement(evt)" />
+<image id="num_part_2" xlink:href="img/a.png" class="draggable" x="19.5" y="21.5" width="4.3" height="2.7"  transform="matrix(1 0 0 1 0 0)" onmousedown="selectElement(evt)" />
+</g>
+
+<image  id="cloud" x="69" y="24" xlink:href="img/cloud2.png" height="25" width="25" display="none"/>
+<g id="remind0" display="none">
+<text id="remind1.1" x="77" y="36" font-family="arial" font-size="2" font-weight="bold">Oops!! </text>
+<text id="remind1.2" x="77" y="38" class="Lfont">Try again.</text>
+</g>
+<g id="remind00" display="none">
+<text id="remind1.1" x="75" y="34" font-family="arial" font-size="2" font-weight="bold">Oops!! </text>
+<text id="remind1.2" x="75" y="36" class="Lfont">I will show you how</text>
+<text id="remind1.2" x="75" y="38" class="Lfont">to do the problem.</text>
+</g>
+<g id="remind1" display="none">
+<text id="remind1.1" x="75" y="34" font-family="arial" font-size="2" font-weight="bold">Good Job! </text>
+<text id="remind1.2" x="72" y="36" class="Lfont"> You have clicked the numbers  </text>
+<text id="remind1.3" x="72" y="38" class="Lfont">into each box correctly. </text>
+</g>
+
+<g id="check" display="none" cursor="pointer" >
+<rect x="75" y="49" width="18" height="3" fill="#2eb8b8"></rect>
+<text x="76" y="51.3" class="Bfont" fill="#FFFFFF">Check My Answer</text>
+</g>
+
+<g id="download" display="none" cursor="pointer">
+<a href="#" onclick='downloadCSV({ filename: "stock-data.csv" });'>
+  <rect x="75" y="54" width="18" height="3" fill="#2eb8b8"></rect>
+  <text x="76" y="56.3" class="Bfont" fill="#FFFFFF">Download Data</text>
+</a>
+</g>
+
+<rect id="checkmask" display="none" x="75" y="49" width="18" height="3" fill="#pink" opacity="0"></rect>
+<rect id="tagmask" display="none" x="0" y="0" width="100" height="35" fill="green"  opacity="0"> </rect>
+<g id="next" display="none" cursor="pointer" >
+ <polygon points="84,55  90,55  90,54 93,56.5 90,59 90,58 84,58  "
+         fill="#3366cc"/>
+<text x="85" y="57" class="Bfont" fill="#FFFFFF">Next</text>
+</g>
+
+<image id="mouse" display="none" xlink:href="img/mouse.png" x="85" y="4" height="3" width="3" />
+
+
+
+
+
+<script><![CDATA[
+
+  var selectedElement = 0;
+  var currentX = 0;
+  var currentY = 0;
+  var svg1=document.getElementById("svg1");
+  var currentMatrix = 0;
+  var clickcount=0;
+  var w=document.getElementById('svg1').getBoundingClientRect().width/100;
+  var h=document.getElementById('svg1').getBoundingClientRect().height/60;
+  var oriX=0;
+  var oriY=0;
+  var morningX=27;
+  var morningY=38;
+  var morningXl=27-4;
+  var morningXr=27+5.5/2+4;
+  var morningYl=38-4;
+  var morningYr=38+2.5/2+4;
+  var afternoonX=44;
+  var afternoonY=38;
+  var afternoonXl=44-4;
+  var afternoonXr=44+5.5/2+4;
+  var afternoonYl=38-4;
+  var afternoonYr=38+2.5/2+4;
+  var allX=61;
+  var allY=38;
+  var allXl=61-4;
+  var allXr=61+5.5/2+4;
+  var allYl=38-4;
+  var allYr=38+2.5/2+4;
+  var right1=0;
+  var right2=0;
+  var right3=0;
+  var correct=0;
+  var trycounter=-1;
+  var judge=0;
+    ]]>
+</script>
+
+
+</svg>
+</div>
+
+
+
+<script>
+$(document).ready(function(){
+//page1
+setTimeout(function() { document.getElementById("1").play();}, 0);
+document.getElementById("1").addEventListener("ended", function(){document.getElementById("2").play();});
+document.getElementById("2").addEventListener("ended", function(){document.getElementById("3").play();});
+document.getElementById("3").addEventListener("ended", function(){document.getElementById("4").play();});
+document.getElementById("4").addEventListener("ended", function(){document.getElementById("5").play();});
+document.getElementById("5").addEventListener("ended", function(){document.getElementById("6").play();});
+document.getElementById("6").addEventListener("ended", function(){document.getElementById("7").play();});
+document.getElementById("7").addEventListener("ended", function(){document.getElementById("24").play();});
+document.getElementById("24").addEventListener("ended", function(){document.getElementById("25").play();});
+document.getElementById("25").addEventListener("ended", function(){document.getElementById("8").play();});
+document.getElementById("8").addEventListener("ended",function(){
+    //insertReport(userid, taskNum,'segment','prompt end');
+    //setTimeout(function(){insertReport(userid, taskNum,'segment','operation start');},50);
+    });
+})
+
+$("#next").click(function(){
+  //insertReport(userid, taskNum, 'action', 'click next button');
+  document.getElementById("click").play();
+  //if(correct==1){location.href = "B2T4_4.php";}
+  });
+
+ $("#check").click(function(){
+      pauseOtherAudios();
+      $("#check").hide();
+
+      if (right1==1&&right2==1&&right3==1)
+      {
+        setTimeout(function(){insertReport(userid, taskNum, 'feedback', 'correct');},100);
+        $("#cloud").show();$("#remind0").hide();$("#remind1").show();correct=1;$("#download").show();
+      }
+      else
+      {
+        document.getElementById('num_part_1').setAttribute('x', 60);
+        document.getElementById('num_part_1').setAttribute('y', 0.5);
+
+        document.getElementById('num_whole').setAttribute('x', 67);
+        document.getElementById('num_whole').setAttribute('y', 4.5);
+
+        document.getElementById('num_part_2').setAttribute('x', 19.5);
+        document.getElementById('num_part_2').setAttribute('y', 21.5);
+          if(trycounter<0)
+            {
+              judge=0;
+              $("#cloud").show();$("#remind0").show();
+              setTimeout(function()
+              {
+                $("#cloud").hide();$("#remind0").hide();
+              },4000);
+              morningright=0; afternoonright=0; allright=0;
+              setTimeout(function() { document.getElementById("11").play();}, 1000);
+              document.getElementById("11").addEventListener("ended", function(){
+                document.getElementById("12").play();});
+              document.getElementById("12").addEventListener("ended", function(){
+                });
+            }
+          else
+            {
+              $("#tagmask").show();
+              $("#cloud").show();$("#remind00").show();
+
+              setTimeout(function(){
+                $("#cloud").hide();$("#remind00").hide();
+                },4000);
+
+              setTimeout(function() { document.getElementById("29").play();}, 100);
+              setTimeout(function()
+                {
+                $("#mouse").show();
+                setTimeout(function() { $("#mouse").velocity({x:"60",y:"0.5"});}, 3000);
+                setTimeout(function(){blink($("#num_part_1"));}, 3000);
+                setTimeout(function() { $("#mouse").velocity({x:"29",y:"38"});}, 5000);
+                setTimeout(function() { $("#num_part_1").velocity({x:"27",y:"38"});}, 5000);
+                });
+
+              document.getElementById("29").addEventListener("ended", function(){
+                document.getElementById("31").play();
+                setTimeout(function() { $("#mouse").velocity({x:"19.5",y:"21.5"});}, 3000);
+                setTimeout(function() {blink($("#num_part_2"));}, 3000);
+                setTimeout(function() { $("#mouse").velocity({x:"46",y:"38"});}, 5000);
+                setTimeout(function() { $("#num_part_2").velocity({x:"44",y:"38"});}, 5000);
+                });
+
+              document.getElementById("31").addEventListener("ended", function(){
+                setTimeout(function() { document.getElementById("33").play();}, 0000);
+                setTimeout(function() { $("#mouse").velocity({x:"67",y:"4.5"});}, 3000);
+                setTimeout(function(){blink($("#num_whole"));}, 3000);
+                setTimeout(function() { $("#mouse").velocity({x:"63",y:"38"});}, 5000);
+                setTimeout(function() { $("#num_whole").velocity({x:"61",y:"38"});}, 5000);
+
+                });
+
+              document.getElementById("33").addEventListener("ended", function(){
+                document.getElementById("17").play();
+                $("#check").show();
+                $("#checkmask").show();
+                setTimeout(function()
+                  {
+                    $("#mouse").velocity({x:"78",y:"51"});
+                    document.getElementById("click").play();
+                  }, 1000);
+
+                });
+
+              document.getElementById("17").addEventListener("ended", function(){
+                document.getElementById("23").play();
+                $("#cloud").show();$("#remind0").hide();$("#remind1").show();
+                });
+
+              document.getElementById("23").addEventListener("ended", function(){
+                });
+              correct=1;
+
+          }
+        }
+          trycounter=trycounter+1;
+      });
+
+
+
+
+</script>
+<div id="output"></div>
+<div id="gaze" style="text-align:center">
+  <span id="words" class="dot"></span>
+</div>
+
+
+
+</body>
+</html>
